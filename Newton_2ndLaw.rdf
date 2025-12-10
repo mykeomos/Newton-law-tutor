@@ -1,0 +1,1200 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/its-newton#"
+     xml:base="http://example.org/its-newton"
+     xmlns:its="http://example.org/its-newton#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://example.org/its-newton">
+        <rdfs:label>Ontology for ITS on Newton&apos;s Second Law (F = ma)</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#argument1 -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#argument1"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#argument2 -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#argument2"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#arguments -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#arguments"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#body -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#body"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#builtin -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#builtin"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#classPredicate -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#classPredicate"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#head -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#head"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#propertyPredicate -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#propertyPredicate"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#varName -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#varName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/its-newton#hasMisconception -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/its-newton#hasMisconception">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#StudentModel"/>
+        <rdfs:range rdf:resource="http://example.org/its-newton#Misconception"/>
+        <rdfs:label>has misconception</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/its-newton#hasQuantity -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/its-newton#hasQuantity">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Problem"/>
+        <rdfs:range rdf:resource="http://example.org/its-newton#PhysicalQuantity"/>
+        <rdfs:label>has quantity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/its-newton#hasSolutionStep -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/its-newton#hasSolutionStep">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Problem"/>
+        <rdfs:range rdf:resource="http://example.org/its-newton#SolutionStep"/>
+        <rdfs:label>has solution step</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/its-newton#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/its-newton#hasUnit">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#PhysicalQuantity"/>
+        <rdfs:range rdf:resource="http://example.org/its-newton#Unit"/>
+        <rdfs:label>has unit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/its-newton#nextStep -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/its-newton#nextStep">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#SolutionStep"/>
+        <rdfs:range rdf:resource="http://example.org/its-newton#SolutionStep"/>
+        <rdfs:label>next step</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/its-newton#producesHint -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/its-newton#producesHint">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Misconception"/>
+        <rdfs:range rdf:resource="http://example.org/its-newton#Hint"/>
+        <rdfs:label>produces hint</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/its-newton#relatedToProblem -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/its-newton#relatedToProblem">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Hint"/>
+        <rdfs:range rdf:resource="http://example.org/its-newton#Problem"/>
+        <rdfs:label>related to problem</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/its-newton#usesFormula -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/its-newton#usesFormula">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Problem"/>
+        <rdfs:range rdf:resource="http://example.org/its-newton#Formula"/>
+        <rdfs:label>uses formula</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/its-newton#difficultyLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/its-newton#difficultyLevel">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Problem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>difficulty level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/its-newton#displayText -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/its-newton#displayText">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Hint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>display text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/its-newton#isCorrect -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/its-newton#isCorrect">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Attempt"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>is correct</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/its-newton#numericalValue -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/its-newton#numericalValue">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#PhysicalQuantity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>numerical value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/its-newton#timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/its-newton#timestamp">
+        <rdfs:domain rdf:resource="http://example.org/its-newton#Attempt"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/its-newton#Acceleration -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Acceleration">
+        <rdfs:subClassOf rdf:resource="http://example.org/its-newton#PhysicalQuantity"/>
+        <rdfs:label>Acceleration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#Attempt -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Attempt">
+        <rdfs:label>Attempt</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#ConceptualProblem -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#ConceptualProblem">
+        <rdfs:subClassOf rdf:resource="http://example.org/its-newton#Problem"/>
+        <rdfs:label>Conceptual Problem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#Force -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Force">
+        <rdfs:subClassOf rdf:resource="http://example.org/its-newton#PhysicalQuantity"/>
+        <rdfs:label>Force</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#Formula -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Formula">
+        <rdfs:label>Formula</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#Hint -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Hint">
+        <rdfs:label>Hint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#Mass -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Mass">
+        <rdfs:subClassOf rdf:resource="http://example.org/its-newton#PhysicalQuantity"/>
+        <rdfs:label>Mass</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#Misconception -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Misconception">
+        <rdfs:label>Misconception</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#NumericProblem -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#NumericProblem">
+        <rdfs:subClassOf rdf:resource="http://example.org/its-newton#Problem"/>
+        <rdfs:label>Numeric Problem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#PhysicalQuantity -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#PhysicalQuantity">
+        <rdfs:label>Physical Quantity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#Problem -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Problem">
+        <rdfs:label>Problem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#SolutionStep -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#SolutionStep">
+        <rdfs:label>Solution Step</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#StudentModel -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#StudentModel">
+        <rdfs:label>Student Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/its-newton#Unit -->
+
+    <owl:Class rdf:about="http://example.org/its-newton#Unit">
+        <rdfs:label>Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/its-newton#Acceleration_Example1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Acceleration_Example1">
+        <rdf:type rdf:resource="http://example.org/its-newton#Acceleration"/>
+        <hasUnit rdf:resource="http://example.org/its-newton#MeterPerSecondSquared"/>
+        <numericalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</numericalValue>
+        <rdfs:label>Acceleration = 3 m/s^2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#F_equals_m_a -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#F_equals_m_a">
+        <rdf:type rdf:resource="http://example.org/its-newton#Formula"/>
+        <rdfs:label>F = m × a</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#ForceCausesMotion -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#ForceCausesMotion">
+        <rdf:type rdf:resource="http://example.org/its-newton#Misconception"/>
+        <producesHint rdf:resource="http://example.org/its-newton#Hint_Formula"/>
+        <rdfs:label>Force directly causes motion, not acceleration</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#Force_Example1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Force_Example1">
+        <rdf:type rdf:resource="http://example.org/its-newton#Force"/>
+        <hasUnit rdf:resource="http://example.org/its-newton#Newton"/>
+        <rdfs:label>Force (to be computed)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#HeavyObjectsSlower -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#HeavyObjectsSlower">
+        <rdf:type rdf:resource="http://example.org/its-newton#Misconception"/>
+        <producesHint rdf:resource="http://example.org/its-newton#Hint_Formula"/>
+        <rdfs:label>Heavier objects always accelerate more slowly</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#Hint_Arithmetic -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Hint_Arithmetic">
+        <rdf:type rdf:resource="http://example.org/its-newton#Hint"/>
+        <displayText>Re-check your multiplication or division; make sure you used the correct numbers.</displayText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#Hint_Formula -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Hint_Formula">
+        <rdf:type rdf:resource="http://example.org/its-newton#Hint"/>
+        <displayText>Think about which variable is missing and rearrange F = m × a accordingly.</displayText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#Hint_Units -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Hint_Units">
+        <rdf:type rdf:resource="http://example.org/its-newton#Hint"/>
+        <displayText>Check the units: use N for force, kg for mass, and m/s^2 for acceleration.</displayText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#Kilogram -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Kilogram">
+        <rdf:type rdf:resource="http://example.org/its-newton#Unit"/>
+        <rdfs:label>Kilogram (kg)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#MassEqualsWeight -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#MassEqualsWeight">
+        <rdf:type rdf:resource="http://example.org/its-newton#Misconception"/>
+        <producesHint rdf:resource="http://example.org/its-newton#Hint_Units"/>
+        <rdfs:label>Mass equals weight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#Mass_Example1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Mass_Example1">
+        <rdf:type rdf:resource="http://example.org/its-newton#Mass"/>
+        <hasUnit rdf:resource="http://example.org/its-newton#Kilogram"/>
+        <numericalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.0</numericalValue>
+        <rdfs:label>Mass = 4 kg</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#MeterPerSecondSquared -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#MeterPerSecondSquared">
+        <rdf:type rdf:resource="http://example.org/its-newton#Unit"/>
+        <rdfs:label>Metre per second squared (m/s^2)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#Newton -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Newton">
+        <rdf:type rdf:resource="http://example.org/its-newton#Unit"/>
+        <rdfs:label>Newton (N)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#Problem_Example1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#Problem_Example1">
+        <rdf:type rdf:resource="http://example.org/its-newton#NumericProblem"/>
+        <hasQuantity rdf:resource="http://example.org/its-newton#Acceleration_Example1"/>
+        <hasQuantity rdf:resource="http://example.org/its-newton#Force_Example1"/>
+        <hasQuantity rdf:resource="http://example.org/its-newton#Mass_Example1"/>
+        <usesFormula rdf:resource="http://example.org/its-newton#F_equals_m_a"/>
+        <difficultyLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</difficultyLevel>
+        <rdfs:label>Example: Compute force from mass and acceleration</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#a_equals_F_div_m -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#a_equals_F_div_m">
+        <rdf:type rdf:resource="http://example.org/its-newton#Formula"/>
+        <rdfs:label>a = F ÷ m</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/its-newton#m_equals_F_div_a -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/its-newton#m_equals_F_div_a">
+        <rdf:type rdf:resource="http://example.org/its-newton#Formula"/>
+        <rdfs:label>m = F ÷ a</rdfs:label>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_f"/>
+        <swrl:argument2 rdf:resource="http://example.org/its-newton#var_fv"/>
+        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:arguments>
+            <rdf:Description/>
+        </swrl:arguments>
+        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_a"/>
+        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Acceleration"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_p"/>
+        <swrl:argument2 rdf:resource="http://example.org/its-newton#var_a"/>
+        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_a"/>
+        <swrl:argument2 rdf:resource="http://example.org/its-newton#var_av"/>
+        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_f"/>
+        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Force"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_p"/>
+        <swrl:classPredicate rdf:resource="http://example.org/its-newton#NumericProblem"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_p"/>
+        <swrl:argument2 rdf:resource="http://example.org/its-newton#var_f"/>
+        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_m"/>
+        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Mass"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_p"/>
+        <swrl:argument2 rdf:resource="http://example.org/its-newton#var_m"/>
+        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="http://example.org/its-newton#var_m"/>
+        <swrl:argument2 rdf:resource="http://example.org/its-newton#var_mv"/>
+        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://example.org/its-newton#Rule_ComputeForce">
+        <swrl:body>
+            <rdf:Description/>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description/>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#var_a">
+        <swrl:varName>a</swrl:varName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#var_av">
+        <swrl:varName>av</swrl:varName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#var_f">
+        <swrl:varName>f</swrl:varName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#var_fv">
+        <swrl:varName>fv</swrl:varName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#var_m">
+        <swrl:varName>m</swrl:varName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#var_mv">
+        <swrl:varName>mv</swrl:varName>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#var_p">
+        <swrl:varName>p</swrl:varName>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://example.org/its-newton#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#f">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#fv">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#mv">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#av">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/its-newton#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a problem has Force and Mass values, compute the Acceleration automatically.</rdfs:comment>
+        <rdfs:label>Compute Acceleration (a = F ÷ m)</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#NumericProblem"/>
+                        <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                <swrl:argument2 rdf:resource="http://example.org/its-newton#f"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Force"/>
+                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#f"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#f"/>
+                                                <swrl:argument2 rdf:resource="http://example.org/its-newton#fv"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#m"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://example.org/its-newton#Mass"/>
+                                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#m"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#m"/>
+                                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#mv"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                                                                <swrl:argument2 rdf:resource="http://example.org/its-newton#a"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Acceleration"/>
+                                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#a"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#av"/>
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#fv"/>
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#mv"/>
+                                                                                                </swrl:arguments>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#a"/>
+                                                                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#av"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a problem has Force and Acceleration values, compute the Mass.</rdfs:comment>
+        <rdfs:label>Compute Mass (m = F ÷ a)</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#NumericProblem"/>
+                        <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                <swrl:argument2 rdf:resource="http://example.org/its-newton#f"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Force"/>
+                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#f"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#f"/>
+                                                <swrl:argument2 rdf:resource="http://example.org/its-newton#fv"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#a"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://example.org/its-newton#Acceleration"/>
+                                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#a"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#a"/>
+                                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#av"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                                                                <swrl:argument2 rdf:resource="http://example.org/its-newton#m"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Mass"/>
+                                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#m"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#mv"/>
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#fv"/>
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#av"/>
+                                                                                                </swrl:arguments>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#m"/>
+                                                                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#mv"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a numeric problem has a mass value and an acceleration value, it multiplies them and writes the result into the force.</rdfs:comment>
+        <rdfs:label>ComputeForce</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#NumericProblem"/>
+                        <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                <swrl:argument2 rdf:resource="http://example.org/its-newton#m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Mass"/>
+                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#m"/>
+                                                <swrl:argument2 rdf:resource="http://example.org/its-newton#mv"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#a"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://example.org/its-newton#Acceleration"/>
+                                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#a"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#a"/>
+                                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#av"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                                                                <swrl:argument2 rdf:resource="http://example.org/its-newton#f"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#Force"/>
+                                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#f"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#fv"/>
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#mv"/>
+                                                                                                    <rdf:Description rdf:about="http://example.org/its-newton#av"/>
+                                                                                                </swrl:arguments>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#numericalValue"/>
+                                                                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#f"/>
+                                                                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#fv"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Misconception Trigger (from a unit error)</rdfs:comment>
+        <rdfs:label>MassEqualsWeight_Misconception</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.org/its-newton#StudentModel"/>
+                        <swrl:argument1 rdf:resource="http://example.org/its-newton#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://example.org/its-newton#NumericProblem"/>
+                                <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasQuantity"/>
+                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#p"/>
+                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://example.org/its-newton#Mass"/>
+                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#m"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasUnit"/>
+                                                        <swrl:argument1 rdf:resource="http://example.org/its-newton#m"/>
+                                                        <swrl:argument2 rdf:resource="http://example.org/its-newton#Newton"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://example.org/its-newton#hasMisconception"/>
+                                                                <swrl:argument1 rdf:resource="http://example.org/its-newton#s"/>
+                                                                <swrl:argument2 rdf:resource="http://example.org/its-newton#MassEqualsWeight"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
