@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Newton's Second Law Tutor (F = m × a)</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      padding: 24px 32px 32px;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      margin-top: 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .field {
+      flex: 1;
+      min-width: 150px;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    input, select {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #d4d7e5;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    input:focus, select:focus {
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 1px rgba(79,70,229,0.25);
+    }
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #4f46e5;
+      color: #fff;
+      margin-top: 12px;
+    }
+    button:hover {
+      background: #4338ca;
+    }
+    .panel {
+      margin-top: 20px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: #f3f4ff;
+      border: 1px solid #e0e3ff;
+      font-size: 0.9rem;
+    }
+    .panel.error {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: #b91c1c;
+    }
+    .panel.success {
+      background: #ecfdf3;
+      border-color: #bbf7d0;
+      color: #166534;
+    }
+    .panel h2 {
+      margin: 0 0 4px 0;
+      font-size: 1rem;
+    }
+    .panel p {
+      margin: 2px 0;
+    }
+    small {
+      color: #777;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Newton's Second Law Tutor</h1>
+    <p class="subtitle">
+      Practice applying <strong>F = m × a</strong>. Enter known values, choose the unknown,
+      and submit your answer to get instant feedback and hints.
+    </p>
+
+    <div class="row">
+      <div class="field">
+        <label for="target">Unknown quantity</label>
+        <select id="target">
+          <option value="force">Force (F)</option>
+          <option value="mass">Mass (m)</option>
+          <option value="acceleration">Acceleration (a)</option>
+        </select>
+      </div>
+    </div>
+
+    <h3>Given values</h3>
+    <div class="row">
+      <div class="field">
+        <label for="massValue">Mass (m)</label>
+        <input type="number" id="massValue" placeholder="e.g. 4" step="any" />
+        <small>Leave blank if mass is the unknown.</small>
+      </div>
+      <div class="field">
+        <label for="massUnit">Mass unit</label>
+        <input type="text" id="massUnit" placeholder="kg" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="accValue">Acceleration (a)</label>
+        <input type="number" id="accValue" placeholder="e.g. 3" step="any" />
+        <small>Leave blank if acceleration is the unknown.</small>
+      </div>
+      <div class="field">
+        <label for="accUnit">Acceleration unit</label>
+        <input type="text" id="accUnit" placeholder="m/s^2" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="forceValue">Force (F)</label>
+        <input type="number" id="forceValue" placeholder="e.g. 12" step="any" />
+        <small>Leave blank if force is the unknown.</small>
+      </div>
+      <div class="field">
+        <label for="forceUnit">Force unit</label>
+        <input type="text" id="forceUnit" placeholder="N" />
+      </div>
+    </div>
+
+    <h3>Your answer for the unknown</h3>
+    <div class="row">
+      <div class="field">
+        <label for="answerValue">Answer value</label>
+        <input type="number" id="answerValue" placeholder="Your answer" step="any" />
+      </div>
+      <div class="field">
+        <label for="answerUnit">Answer unit</label>
+        <input type="text" id="answerUnit" placeholder="e.g. N" />
+      </div>
+    </div>
+
+    <button id="submitBtn">Check my answer</button>
+
+    <div id="resultPanel" class="panel" style="display: none;">
+      <h2 id="resultTitle"></h2>
+      <p id="resultText"></p>
+      <p id="hintText"></p>
+    </div>
+
+    <div id="errorPanel" class="panel error" style="display: none;">
+      <h2>Error</h2>
+      <p id="errorText"></p>
+    </div>
+
+  </div>
+
+  <script>
+    const submitBtn = document.getElementById("submitBtn");
+    const resultPanel = document.getElementById("resultPanel");
+    const resultTitle = document.getElementById("resultTitle");
+    const resultText = document.getElementById("resultText");
+    const hintText = document.getElementById("hintText");
+    const errorPanel = document.getElementById("errorPanel");
+    const errorText = document.getElementById("errorText");
+
+    function hidePanels() {
+      resultPanel.style.display = "none";
+      errorPanel.style.display = "none";
+      resultPanel.classList.remove("success");
+      resultPanel.classList.remove("error");
+    }
+
+    submitBtn.addEventListener("click", async () => {
+      hidePanels();
+
+      const target = document.getElementById("target").value;
+
+      const massValue = document.getElementById("massValue").value;
+      const massUnit = document.getElementById("massUnit").value;
+      const accValue = document.getElementById("accValue").value;
+      const accUnit = document.getElementById("accUnit").value;
+      const forceValue = document.getElementById("forceValue").value;
+      const forceUnit = document.getElementById("forceUnit").value;
+
+      const answerValue = document.getElementById("answerValue").value;
+      const answerUnit = document.getElementById("answerUnit").value;
+
+      const payload = {
+        target,
+        given: {
+          mass: { value: massValue || null, unit: massUnit || null },
+          acceleration: { value: accValue || null, unit: accUnit || null },
+          force: { value: forceValue || null, unit: forceUnit || null },
+        },
+        studentAnswer: { value: answerValue || null, unit: answerUnit || null },
+      };
+
+      try {
+        // Prefer same-origin API when page is served from http(s).
+        // If page is opened from file://, fall back to localhost backend.
+        const API_BASE = (window.location.protocol && window.location.protocol.startsWith('http'))
+          ? window.location.origin
+          : 'http://127.0.0.1:5000';
+
+        const resp = await fetch(`${API_BASE}/api/solve`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        // Safely parse JSON only when the server returned JSON.
+        let data = null;
+        const ct = resp.headers.get('content-type') || '';
+        if (ct.includes('application/json')) {
+          try {
+            data = await resp.json();
+          } catch (parseErr) {
+            console.error('Failed to parse JSON from response:', parseErr);
+            const text = await resp.text();
+            errorText.textContent = 'Server returned invalid JSON: ' + (text ? text.slice(0, 200) : '');
+            errorPanel.style.display = 'block';
+            return;
+          }
+        } else {
+          // Not JSON (likely HTML error page) — show a helpful UI message and log full text
+          const text = await resp.text();
+          console.error('Non-JSON response from server:', text);
+          errorText.textContent = 'Server did not return JSON. Response preview: ' + (text ? text.slice(0, 300) : '(empty)');
+          errorPanel.style.display = 'block';
+          return;
+        }
+
+        if (!resp.ok) {
+          errorText.textContent = data && data.error ? data.error : 'An unknown error occurred.';
+          errorPanel.style.display = 'block';
+          return;
+        }
+
+        const correctVal = data.correctValue;
+        const correctStr = correctVal !== null && correctVal !== undefined
+          ? correctVal.toFixed(3).replace(/\.?0+$/, "")  // trim trailing zeros
+          : "N/A";
+
+        resultPanel.style.display = "block";
+
+        if (data.correct) {
+          resultPanel.classList.add("success");
+          resultTitle.textContent = "Correct ✅";
+          resultText.textContent = `Well done! The correct ${data.target} is ${correctStr}.`;
+          hintText.textContent = "";
+        } else {
+          resultPanel.classList.add("error");
+          resultTitle.textContent = "Not quite yet ❌";
+          resultText.textContent = `The correct ${data.target} is ${correctStr}.`;
+          hintText.textContent = data.hint ? `Hint: ${data.hint}` : "";
+        }
+      } catch (err) {
+        // Show a helpful message in the UI and log the real error to console
+        console.error('Request to backend failed:', err);
+        errorText.textContent = "Could not reach the server. Is the backend running?" + (err && err.message ? (' (' + err.message + ')') : '');
+        errorPanel.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
