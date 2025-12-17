@@ -1,17 +1,17 @@
 **Newton's Law Tutor**
 
-A small backend service that uses an ontology to help students solve and get hints for problems based on Newton's Second Law (F = m × a). The repository contains a minimal Flask API that loads an ontology (OWL/RDF) and exposes a JSON API used by a simple frontend in the sibling `newfrontend` folder.
+A small backend service that uses an ontology to help students solve and get hints for problems based on Newton's Second Law (F = m × a). The repository contains a minimal Flask API that loads an ontology (OWL/RDF) and exposes a JSON API used by a simple frontend in the `newfrontend` folder.
 
 **Contents**
 - `app_with_ontology.py`: Backend Flask application with ontology-aware problem creation and a `/api/solve` endpoint.
 - `Newton_2ndLaw.owl` / `Newton_2ndLaw.rdf`: Ontology files used by the backend (one or both may be present).
-- `newfrontend/`: Sibling folder (not inside this repo) with a simple `index.html` frontend that the backend can serve.
+- `newfrontend/`: Folder with a simple `index.html` frontend that the backend can serve.
 
 **Features**
 - Loads an ontology via `owlready2` and optionally converts RDF using `rdflib` if needed.
 - Creates ontology-based `NumericProblem` individuals and associated quantities.
 - Computes the missing quantity (force, mass, or acceleration) and returns correctness, hints, and the correct value.
-- Serves the frontend `index.html` from the sibling `newfrontend` folder.
+- Serves the frontend `index.html` from the `newfrontend` folder.
 
 **Prerequisites**
 - Python 3.8+
@@ -44,7 +44,7 @@ python app_with_ontology.py
 ```
 
 The backend listens by default on `http://0.0.0.0:5000` and exposes:
-- `GET /` — serves `index.html` from the sibling `newfrontend` folder (if present)
+- `GET /` — serves `index.html` from the `newfrontend` folder
 - `POST /api/solve` — expects JSON describing `given` quantities and `target` and returns correctness, `correctValue`, `errorType`, and a `hint` when available.
 
 Example `POST /api/solve` payload:
