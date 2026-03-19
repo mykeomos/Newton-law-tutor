@@ -64,15 +64,4 @@ Example `POST /api/solve` payload:
 - If the ontology fails to load, the app attempts to use `rdflib` to parse/convert the file. Install `rdflib` if you see conversion errors.
 - The repo currently sets a repository-local Git identity. If you want the identity global, run:
 
-```powershell
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
-```
 
-**Contributing**
-- Improve ontology hints and labels in the OWL files to enhance hint quality.
-- Add unit tests for `solve_with_ontology` and the error classification logic.
-
-**License & Contact**
-- Add your preferred license file to the repository (e.g., `MIT` or `Apache-2.0`).
-- Contact: `michaelomogbeleghan@gmal.com`
